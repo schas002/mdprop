@@ -1,0 +1,84 @@
+# MdProp
+
+- **kind**: informal proposal
+- **last update**: 2016-12-18
+
+MdProp, a simple addition to markdown: put properties in text.
+
+## The syntax
+
+The syntax is easy.
+
+MdProp uses headings as a hierarchy of tables.
+
+```markdown
+# Heading 1
+thing
+## Heading 2
+thing 2
+```
+
+would translate to [TOML](https://github.com/toml-lang/toml) something like
+
+```toml
+[Heading_1]
+"" = "thing"
+[Heading_1.Heading_2]
+"" = "thing 2"
+```
+
+Next, *just after* each heading any amount of properties can be put, in the format `- **key**: value` or `* **key**: value` or anything that could be interpreted as a list item with content `**key**: value` (of course, replacing `key` and `value` with the actual key and value).
+
+```markdown
+# Heading
+- **thing**: amabobajig
+thing
+## Heading 2
+- **thingythingy**: thingamabobajig
+thing 2
+```
+
+would translate to TOML something like
+
+```toml
+[Heading]
+"thing" = "amabobajig"
+"" = "thing"
+[Heading.Heading_2]
+"thingythingy" = "thingamabobajig"
+"" = "thing 2"
+```
+
+Keys can have spaces. Values are to always be interpreted as strings.
+
+```markdown
+# Heading
+- **the answer**: 42
+thingamabobajig
+```
+
+would translate to TOML something like
+
+```toml
+[Heading]
+"the answer" = "42"
+"" = "thingamabobajig"
+```
+
+## File type
+
+- **extension**: mdprop
+
+You might have noticed that the file extension of this README is `mdprop` and not the usual `md`, as in other READMEs. Well, it's the file extension of MdProp files, so deal with it. ;)
+
+## That's it
+
+- **are we done**: yes
+
+Yup, that's it. If you have any questions, feel free to send issues and PRs.
+
+## License
+
+- **license**: CC-BY-4.0
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
