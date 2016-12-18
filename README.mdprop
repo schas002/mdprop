@@ -69,7 +69,15 @@ would translate to TOML something like
 
 - **extension**: mdprop
 
-You might have noticed that the file extension of this README is `mdprop` and not the usual `md`, as in other READMEs. Well, it's the file extension of MdProp files, so deal with it. ;)
+You might have noticed that the file extension of this README is `mdprop` and not the usual `md`, as in other READMEs, and the file doesn't render properly. Well, it's the file extension of MdProp files, so deal with it. ;)
+
+And for the topic of rendering...
+
+## Renderers
+
+- **list of**: renderers
+
+*No renderers yet. When you made one, share with us!*
 
 ## That's it
 
